@@ -123,8 +123,7 @@ app.get("/get-post/:id", (req, res) => {
         if (err) {
             throw err;
         } else {
-            console.log(myRes);
-            res.status(200).send(`Post ${req.params.id} fetched...`);
+            res.status(200).json(myRes);
         }
     });
 });
