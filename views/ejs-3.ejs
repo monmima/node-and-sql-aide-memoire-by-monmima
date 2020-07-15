@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS 3</title>
+
+    <style>
+        figure {
+            border: 2px solid black;
+        }
+        footer, header {
+            align-items: center;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 50px;
+            padding: 5px;
+        }
+        img {
+            max-height: 50px;
+            max-width: auto;
+        }
+        .database {
+            background-color: black;
+            color: white;
+            margin: 5px;
+            padding: 5px;
+        }
+        .database-name {
+            font-size: 1.2em;
+            text-align: center;
+        }
+        figure, .images {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <%- include("header") %>
+
+
+    <h1>EJS, example 3</h1>
+    <p>This is the main EJS template.</p>
+
+    <div class="images">
+        <figure>
+            <!---->
+            <img src="http://icons.iconarchive.com/icons/goescat/macaron/256/gimp-icon.png" alt="Remote Image">
+            <figcaption>Remote image</figcaption>
+        </figure>
+    
+        <figure>
+            <!--http://icons.iconarchive.com/icons/goescat/macaron/256/firefox-icon.png-->
+            <img src="img/firefox-icon.png" alt="Local Image">
+            <figcaption>Local image</figcaption>
+        </figure>
+    </div>
+
+    <p>The items below come from a MySQL database.</p>
+
+    <p><strong>If nothing shows up in the black boxes below</strong>, go back to the main page of the app and populate the database.</p>
+
+    <div>
+        <% for (let i of post) { %>
+            <div class="database">
+                <p class="database-name"><%= i.title %>: ID <%= i.id %></p>
+                <p><%= i.body %></p>
+            </div>
+        <% } %>
+    </div>
+    
+    <%- include("footer") %>
+    <script src="js/random-message.js"></script>
+</body>
+</html>
+
+

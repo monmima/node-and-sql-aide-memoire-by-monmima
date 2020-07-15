@@ -26,6 +26,14 @@ db.connect((err) => {
 const app = express();
 
 /**
+ * EJS
+ * concatenate the current working directory
+ * and a folder called views
+ */
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+
+/**
  * serving static files from the "public" folder
  * this includes: image, HTML and JS files, etc.
  */
@@ -122,29 +130,15 @@ app.get("/get-post/:id", (req, res) => {
 });
 
 // update post
-app.get("/update-post/:id", (req, res) => {
+app.get("/update-posts", (req, res) => {
     let newTitle = "Updated Title";
-    let sql = `UPDATE posts SET title = "${newTitle}" WHERE id = ${req.params.id}`;
+    let sql = `UPDATE posts SET title = "${newTitle}"`;
     let query = db.query(sql, (err, result) => {
         if (err) {
             throw err;
         } else {
             console.log(result);
             res.status(200).send("Post updated...");
-        }
-    });
-});
-
-// delete post
-app.get("/delete-post/:id", (req, res) => {
-    let newTitle = "Updated Title";
-    let sql = `DELETE FROM posts WHERE id = ${req.params.id}`;
-    let query = db.query(sql, (err, result) => {
-        if (err) {
-            throw err;
-        } else {
-            console.log(result);
-            res.status(200).send("Post deleted...");
         }
     });
 });
@@ -163,13 +157,76 @@ app.get("/delete-posts", (req, res) => {
     });
 });
 
+
+/**
+ * EJS template 1
+ * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
+ */
+app.get('/ejs-1', (req, res) => {
+    res.status(200).render("ejs-1");
+});
+
+/**
+ * EJS template 2
+ * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
+ */
+app.get('/ejs-2', (req, res) => {
+    res.status(200).render("ejs-2", {
+        node : {
+            dirname: __dirname,
+            filename: __filename
+        }
+    });
+});
+
+/**
+ * EJS template 3
+ * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
+ */
+app.get('/ejs-3', (req, res) => {
+    // mongodb.connect(url, { useUnifiedTopology: true }, (err, db) => {
+    //     if (err) {
+    //         throw err;
+    //     }
+
+    //     // name of the database
+    //     const dbo = db.db("admin");
+
+    //     // name of the collection in the database
+    //     dbo.collection("feedbacks").find().toArray((err, result) => {
+    //         if (err) {
+    //             throw err;
+    //         }
+
+    //         res.status(200).render("ejs-3", { feedbacks : result });
+    //         db.close();
+    //     });
+    // });
+
+    let sql = "SELECT * FROM posts";
+    let query = db.query(sql, (err, results) => {
+        if (err) {
+            throw err;
+        } else {
+            console.log(results);
+            // res.status(200).send(results);
+
+            // res.status(200).status(200).json(results);
+
+            res.status(200).render("ejs-3", { post : results });
+
+            // res.status(200).send((results));
+        }
+    });
+});
+
 /**
  * handling 404 errors
  * source: https://expressjs.com/en/starter/faq.html
  */
 app.use(function (req, res, next) {
     res.status(404).send("404 - Sorry can't find that!")
-})
+});
 
 app.listen("3000", () => {
     console.log("Server started on port 3000");
