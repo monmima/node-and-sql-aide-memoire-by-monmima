@@ -72,28 +72,28 @@ app.get("/create-post-table", (req, res) => {
 
 // insert post 1
 app.get("/add-post-1", (req, res) => {
-    let post = {title: "Post One", body: "This is post number 1."}
+    let post = {title: "Barba non facit philosophum", body: "Argumentum baculinum non semper decorum est..."}
     let sql = "INSERT INTO posts SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
         } else {
             console.log(myRes);
-            res.status(200).send("Post 1 added...");
+            res.status(200).send("Post added...");
         }
     });
 });
 
 // insert post 2
 app.get("/add-post-2", (req, res) => {
-    let post = {title: "Post 2", body: "This is post number 2."}
+    let post = {title: "Epistalam tibi do", body: "Vicus gallicus parvus est."}
     let sql = "INSERT INTO posts SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
         } else {
             console.log(myRes);
-            res.status(200).send("Post 2 added...");
+            res.status(200).send("Post added...");
         }
     });
 });
@@ -138,7 +138,7 @@ app.get("/update-posts", (req, res) => {
             throw err;
         } else {
             console.log(myRes);
-            res.status(200).send("Post updated...");
+            res.status(200).send("All posts updated...");
         }
     });
 });
@@ -152,7 +152,7 @@ app.get("/delete-posts", (req, res) => {
             throw err;
         } else {
             console.log(myRes);
-            res.status(200).send("Posts deleted...");
+            res.status(200).send("All posts deleted...");
         }
     });
 });
