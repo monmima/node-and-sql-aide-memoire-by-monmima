@@ -54,7 +54,7 @@ app.get("/createdb", (req, res) => {
         if (err) {
             throw err;
         } else {
-            console.log(result);
+            console.log(myRes);
             res.status(200).send("Database created...");
         }
     });
@@ -64,8 +64,8 @@ app.get("/createdb", (req, res) => {
 app.get("/create-post-table", (req, res) => {
     let sql = "CREATE TABLE posts (id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY (id))";
 
-    db.query(sql, (err, result) => {
-        console.log(result);
+    db.query(sql, (err, myRes) => {
+        console.log(myRes);
         res.status(200).send("Posts table created...");
     });
 });
@@ -74,11 +74,11 @@ app.get("/create-post-table", (req, res) => {
 app.get("/add-post-1", (req, res) => {
     let post = {title: "Post One", body: "This is post number 1."}
     let sql = "INSERT INTO posts SET ? ";
-    let query = db.query(sql, post, (err, result) => {
+    let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(result);
+            console.log(myRes);
             res.status(200).send("Post 1 added...");
         }
     });
@@ -88,11 +88,11 @@ app.get("/add-post-1", (req, res) => {
 app.get("/add-post-2", (req, res) => {
     let post = {title: "Post 2", body: "This is post number 2."}
     let sql = "INSERT INTO posts SET ? ";
-    let query = db.query(sql, post, (err, result) => {
+    let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(result);
+            console.log(myRes);
             res.status(200).send("Post 2 added...");
         }
     });
@@ -102,16 +102,16 @@ app.get("/add-post-2", (req, res) => {
 app.get("/get-posts", (req, res) => {
 
     let sql = "SELECT * FROM posts";
-    let query = db.query(sql, (err, results) => {
+    let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(results);
-            // res.status(200).send(results);
+            console.log(myRes);
+            // res.status(200).send(myRes);
 
-            res.status(200).status(200).json(results);
+            res.status(200).json(myRes);
 
-            // res.status(200).send((results));
+            // res.status(200).send((myRes));
         }
     });
 });
@@ -119,12 +119,12 @@ app.get("/get-posts", (req, res) => {
 // select single post
 app.get("/get-post/:id", (req, res) => {
     let sql = `SELECT * FROM posts WHERE id = ${req.params.id}` ;
-    let query = db.query(sql, (err, result) => {
+    let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(result);
-            res.status(200).status(200).send("Post fetched...");
+            console.log(myRes);
+            res.status(200).send(`Post ${req.params.id} fetched...`);
         }
     });
 });
@@ -133,11 +133,11 @@ app.get("/get-post/:id", (req, res) => {
 app.get("/update-posts", (req, res) => {
     let newTitle = "Updated Title";
     let sql = `UPDATE posts SET title = "${newTitle}"`;
-    let query = db.query(sql, (err, result) => {
+    let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(result);
+            console.log(myRes);
             res.status(200).send("Post updated...");
         }
     });
@@ -147,11 +147,11 @@ app.get("/update-posts", (req, res) => {
 app.get("/delete-posts", (req, res) => {
     let newTitle = "Updated Title";
     let sql = `DELETE FROM posts`;
-    let query = db.query(sql, (err, result) => {
+    let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(result);
+            console.log(myRes);
             res.status(200).send("Posts deleted...");
         }
     });
@@ -184,38 +184,16 @@ app.get('/ejs-2', (req, res) => {
  * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
  */
 app.get('/ejs-3', (req, res) => {
-    // mongodb.connect(url, { useUnifiedTopology: true }, (err, db) => {
-    //     if (err) {
-    //         throw err;
-    //     }
-
-    //     // name of the database
-    //     const dbo = db.db("admin");
-
-    //     // name of the collection in the database
-    //     dbo.collection("feedbacks").find().toArray((err, result) => {
-    //         if (err) {
-    //             throw err;
-    //         }
-
-    //         res.status(200).render("ejs-3", { feedbacks : result });
-    //         db.close();
-    //     });
-    // });
-
     let sql = "SELECT * FROM posts";
-    let query = db.query(sql, (err, results) => {
+
+    db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
         } else {
-            console.log(results);
-            // res.status(200).send(results);
+            console.log(myRes);
 
-            // res.status(200).status(200).json(results);
+            res.status(200).render("ejs-3", { post : myRes });
 
-            res.status(200).render("ejs-3", { post : results });
-
-            // res.status(200).send((results));
         }
     });
 });

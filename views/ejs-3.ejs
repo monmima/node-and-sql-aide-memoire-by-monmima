@@ -69,7 +69,13 @@
     <div>
         <% for (let i of post) { %>
             <div class="database">
-                <p class="database-name"><%= i.title %>: ID <%= i.id %></p>
+                <p class="database-name">
+                    
+                    <a href="/get-post/<%= i.id %>">
+                        <%= i.title %>: ID <%= i.id %>
+                    </a>
+
+                </p>
                 <p><%= i.body %></p>
             </div>
         <% } %>
