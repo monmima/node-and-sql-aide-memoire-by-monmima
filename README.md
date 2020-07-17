@@ -1,16 +1,24 @@
 # node-and-sql-aide-memoire-by-monmima
 
+## Node.js + SQL
+
 This is an aide-mémoire (i. e., mnemonic device) for myself, but maybe you'll find it useful too!
 
-## Node.js + SQL
+## Node.js
 
 This project was influenced by Brad Traversy's tutorial on MySQL and Node.js. It's called [Using MySQL With Node.js](https://www.youtube.com/watch?v=EN6Dx22cPRI).
 
-By the way, Brad Traversy has also created a MySQL cheatsheet, which he [made available on Github Gist](https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3).
-
-Also, [Mosh Hamedani's tutorial on YouTube](https://www.youtube.com/watch?v=TlB_eWDSMt4) made it possible for me to create the .ejs-1 page, which documents Node.js.
+Also, [Mosh Hamedani's Node.js tutorial on YouTube](https://www.youtube.com/watch?v=TlB_eWDSMt4) made it possible for me to create the .ejs-1 page, which documents Node.js.
 
 Finally, I was influenced by my own [Node and MongoDB CRUD aide-mémoire](https://github.com/monmima/node-and-mongodb-crud-aide-memoire-by-monmima).
+
+
+## SQL
+
+For more information on SQL, here are some great resources:
+
+1. Brad Traversy has also created a MySQL cheatsheet, which he [made available on Github Gist](https://gist.github.com/bradtraversy/c831baaad44343cc945e76c2e30927b3).
+2. Mosh Hamedami has created a [3-hour course](https://www.youtube.com/watch?v=7S_tz1z_5bA) on YouTube video with an index indicating where each topic is located in it.
 
 ## EJS: You don't want to learn it for now? No problem!
 
