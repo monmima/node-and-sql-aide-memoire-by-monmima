@@ -10,8 +10,10 @@ const db = mysql.createConnection({
     user: "root",
     password: "",
 
-    // une fois l'appli créée, on peut décommenter la ligne suivante
-    database: "nodemysql"
+    // once the app is create you can uncommented the next line
+    // (one of them if there are two lines below)
+    // database: "node_and_sql_aide_memoire_db"
+    database: "node_and_sql_aide_memoire_db"
 });
 
 // connect
@@ -49,7 +51,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 // create DB
 app.get("/createdb", (req, res) => {
-    let sql = "CREATE DATABASE nodemysql";
+    let sql = "CREATE DATABASE node_and_sql_aide_memoire_db";
     db.query(sql, () => {
         if (err) {
             throw err;
@@ -61,8 +63,8 @@ app.get("/createdb", (req, res) => {
 });
 
 // create table
-app.get("/create-post-table", (req, res) => {
-    let sql = "CREATE TABLE posts (id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY (id))";
+app.get("/create-posts-table", (req, res) => {
+    let sql = "CREATE TABLE posts_tb (id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY (id))";
 
     db.query(sql, (err, myRes) => {
         console.log(myRes);
@@ -104,7 +106,9 @@ app.get("/get-posts", (req, res) => {
     let sql = "SELECT * FROM posts";
     let query = db.query(sql, (err, myRes) => {
         if (err) {
+            res.status(200).send("Are you sure you have created a table?");
             throw err;
+
         } else {
             console.log(myRes);
             // res.status(200).send(myRes);
