@@ -92,7 +92,7 @@ app.post("/add-post-form", (req, res) => {
 
 // insert post 1
 app.get("/add-post-1", (req, res) => {
-    let post = {title: "Barba non facit philosophum", body: "Argumentum baculinum non semper decorum est..."}
+    let post = {title: "Titulus est", body: "Argumentum baculinum non semper decorum est..."}
     let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
@@ -106,7 +106,7 @@ app.get("/add-post-1", (req, res) => {
 
 // insert post 2
 app.get("/add-post-2", (req, res) => {
-    let post = {title: "Epistalam tibi do", body: "Vicus gallicus parvus est."}
+    let post = {title: "Titulus alter est", body: "Vicus gallicus parvus est."}
     let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
