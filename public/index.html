@@ -25,7 +25,8 @@
 
     <h2>Create</h2>
 
-    <form method="POST" action="/add-post-form">
+    <!--for a more complex form, please consider the possibility of using the <legend> and <fieldset> tags-->
+    <form name="form-create-data" id="form-create-data" method="POST" action="/add-post-form">
         <p><label>Post title:</label></p>
         <p><input type="text" name="title" required></p>
         
