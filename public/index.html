@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Node.js + MySQL Aide-Mémoire</title>
+
+    <style>
+        h1, h2, h3, h4 {
+            background-color: black;
+            color: white;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+
 </head>
 <body>
 
+    <h1>Please fill out the form:</h1>
+
+    <form method="POST" action="/add-post-form">
+        <p><label>Post title:</label></p>
+        <p><input type="text" name="title" required></p>
+        
+        <p><label>Post body:</label></p>
+        <p><input type="text" name="body" required></p>
+        
+        <input type="submit" value="Submit">
+    </form>
+
     <h2>Create</h2>
     <ul>
-        <li><a href="/createdb" title="Create DB">Create DB</a></li>
-        <li><a href="/create-post-table" title="Create post table">create-post-table</a></li>
+        <!-- <li><a href="/createdb" title="Create DB">Create DB</a></li>
+        <li><a href="/create-post-table" title="Create post table">create-post-table</a></li> -->
         <li><a href="/add-post-1" title="add-post-1">add one item</a></li>
         <li><a href="/add-post-2" title="add-post-2">add another item</a></li>
     </ul>

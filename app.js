@@ -2,7 +2,12 @@
 
 const express = require("express");
 const path = require('path');
+const bodyParser = require('body-parser'); // needed to read the content from the form
 const mysql = require("mysql");
+
+// using express and the body-parser module
+const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // create connection
 const db = mysql.createConnection({
@@ -24,8 +29,6 @@ db.connect((err) => {
 
     console.log("MySql connected...");
 });
-
-const app = express();
 
 /**
  * EJS
@@ -70,6 +73,21 @@ app.get("/create-posts-table", (req, res) => {
         console.log(myRes);
         res.status(200).send("Posts table created...");
     });
+});
+
+// insert post-form
+app.post("/add-post-form", (req, res) => {
+    let post = {title: req.body.title, body: req.body.body}
+    let sql = "INSERT INTO posts SET ? ";
+    let query = db.query(sql, post, (err, myRes) => {
+        if (err) {
+            throw err;
+        } else {
+            console.log(myRes);
+            res.status(200).send("Post added...");
+        }
+    });
+    console.log(req);
 });
 
 // insert post 1
