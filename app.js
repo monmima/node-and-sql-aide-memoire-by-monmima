@@ -44,37 +44,6 @@ app.set("view engine", "ejs");
  */
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-// /**
-//  * handling 404 errors
-//  * source: https://expressjs.com/en/starter/faq.html
-//  */
-// app.use(function (req, res, next) {
-//     res.status(200).send("404 - Sorry can't find that!")
-// });
-
-// create DB
-app.get("/createdb", (req, res) => {
-    let sql = "CREATE DATABASE node_and_sql_aide_memoire_db";
-    db.query(sql, () => {
-        if (err) {
-            throw err;
-        } else {
-            console.log(myRes);
-            res.status(200).send("Database created...");
-        }
-    });
-});
-
-// create table
-app.get("/create-posts-table", (req, res) => {
-    let sql = "CREATE TABLE posts_tb (id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY (id))";
-
-    db.query(sql, (err, myRes) => {
-        console.log(myRes);
-        res.status(200).send("Posts table created...");
-    });
-});
-
 // insert post-form
 app.post("/add-post-form", (req, res) => {
     let post = {title: req.body.title, body: req.body.body}
@@ -87,7 +56,6 @@ app.post("/add-post-form", (req, res) => {
             res.status(200).send("Post added...");
         }
     });
-    console.log(req);
 });
 
 // insert post 1
