@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2020 at 01:50 AM
+-- Generation Time: Jul 19, 2020 at 05:27 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.31
 
@@ -24,31 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
+-- Table structure for table `posts_tb`
 --
 
-CREATE TABLE `posts` (
+CREATE TABLE `posts_tb` (
   `id` int(11) NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   `body` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `posts`
+-- Dumping data for table `posts_tb`
 --
 
-INSERT INTO `posts` (`id`, `title`, `body`) VALUES
-(25, 'Epistalam tibi do', 'Vicus gallicus parvus est.'),
-(26, 'Barba non facit philosophum', 'Argumentum baculinum non semper decorum est...');
+INSERT INTO `posts_tb` (`id`, `title`, `body`) VALUES
+(49, 'Updated Title', 'asdfadsf'),
+(50, 'Updated Title', 'Argumentum baculinum non semper decorum est...'),
+(51, 'Updated Title', 'Vicus gallicus parvus est.');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `posts`
+-- Indexes for table `posts_tb`
 --
-ALTER TABLE `posts`
+ALTER TABLE `posts_tb`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -56,10 +57,10 @@ ALTER TABLE `posts`
 --
 
 --
--- AUTO_INCREMENT for table `posts`
+-- AUTO_INCREMENT for table `posts_tb`
 --
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+ALTER TABLE `posts_tb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -78,7 +78,7 @@ app.get("/create-posts-table", (req, res) => {
 // insert post-form
 app.post("/add-post-form", (req, res) => {
     let post = {title: req.body.title, body: req.body.body}
-    let sql = "INSERT INTO posts SET ? ";
+    let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
@@ -93,7 +93,7 @@ app.post("/add-post-form", (req, res) => {
 // insert post 1
 app.get("/add-post-1", (req, res) => {
     let post = {title: "Barba non facit philosophum", body: "Argumentum baculinum non semper decorum est..."}
-    let sql = "INSERT INTO posts SET ? ";
+    let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
@@ -107,7 +107,7 @@ app.get("/add-post-1", (req, res) => {
 // insert post 2
 app.get("/add-post-2", (req, res) => {
     let post = {title: "Epistalam tibi do", body: "Vicus gallicus parvus est."}
-    let sql = "INSERT INTO posts SET ? ";
+    let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
             throw err;
@@ -121,7 +121,7 @@ app.get("/add-post-2", (req, res) => {
 // read/select posts
 app.get("/get-posts", (req, res) => {
 
-    let sql = "SELECT * FROM posts";
+    let sql = "SELECT * FROM posts_tb";
     let query = db.query(sql, (err, myRes) => {
         if (err) {
             res.status(200).send("Are you sure you have created a table?");
@@ -140,7 +140,7 @@ app.get("/get-posts", (req, res) => {
 
 // select single post
 app.get("/get-post/:id", (req, res) => {
-    let sql = `SELECT * FROM posts WHERE id = ${req.params.id}` ;
+    let sql = `SELECT * FROM posts_tb WHERE id = ${req.params.id}` ;
     let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
@@ -153,7 +153,7 @@ app.get("/get-post/:id", (req, res) => {
 // update post
 app.get("/update-posts", (req, res) => {
     let newTitle = "Updated Title";
-    let sql = `UPDATE posts SET title = "${newTitle}"`;
+    let sql = `UPDATE posts_tb SET title = "${newTitle}"`;
     let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
@@ -167,7 +167,7 @@ app.get("/update-posts", (req, res) => {
 // delete posts
 app.get("/delete-posts", (req, res) => {
     let newTitle = "Updated Title";
-    let sql = `DELETE FROM posts`;
+    let sql = `DELETE FROM posts_tb`;
     let query = db.query(sql, (err, myRes) => {
         if (err) {
             throw err;
@@ -205,7 +205,7 @@ app.get('/ejs-2', (req, res) => {
  * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
  */
 app.get('/ejs-3', (req, res) => {
-    let sql = "SELECT * FROM posts";
+    let sql = "SELECT * FROM posts_tb";
 
     db.query(sql, (err, myRes) => {
         if (err) {
