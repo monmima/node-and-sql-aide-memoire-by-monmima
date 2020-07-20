@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 19, 2020 at 05:27 PM
+-- Generation Time: Jul 20, 2020 at 04:30 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.31
 
@@ -28,19 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `posts_tb` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `body` varchar(255) DEFAULT NULL
+  `id_post` int(11) NOT NULL,
+  `title_post` varchar(255) DEFAULT NULL,
+  `body_post` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `posts_tb`
 --
 
-INSERT INTO `posts_tb` (`id`, `title`, `body`) VALUES
-(49, 'Updated Title', 'asdfadsf'),
-(50, 'Updated Title', 'Argumentum baculinum non semper decorum est...'),
-(51, 'Updated Title', 'Vicus gallicus parvus est.');
+INSERT INTO `posts_tb` (`id_post`, `title_post`, `body_post`) VALUES
+(62, 'Updated Title', 'test'),
+(63, 'Updated Title', 'Argumentum baculinum non semper decorum est...'),
+(64, 'Updated Title', 'Vicus gallicus parvus est.');
 
 --
 -- Indexes for dumped tables
@@ -50,7 +50,7 @@ INSERT INTO `posts_tb` (`id`, `title`, `body`) VALUES
 -- Indexes for table `posts_tb`
 --
 ALTER TABLE `posts_tb`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_post`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -60,7 +60,7 @@ ALTER TABLE `posts_tb`
 -- AUTO_INCREMENT for table `posts_tb`
 --
 ALTER TABLE `posts_tb`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

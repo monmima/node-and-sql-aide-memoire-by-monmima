@@ -45,7 +45,6 @@
 <body>
     <%- include("header") %>
 
-
     <h1>EJS, example 3</h1>
     <p>This is the main EJS template.</p>
 
@@ -63,21 +62,19 @@
         </figure>
     </div>
 
-    <p>The items below come from a MySQL database.</p>
-
-    <p><strong>If nothing shows up in black boxes below</strong>, go back to the main page of the app and populate the database.</p>
+    <p>The items below come from the database. <strong>If nothing shows up in black boxes below</strong>, go back to the main page of the app and populate the database.</p>
 
     <div>
         <% for (let i of post) { %>
             <div class="database">
                 <p class="database-name">
                     
-                    <a href="/get-post/<%= i.id %>" title="<%= i.title %>">
-                        <%= i.title %>: ID <%= i.id %>
+                    <a href="/get-post/<%= i.id_post %>" title="<%= i.title_post %>">
+                        <%= i.title_post %>: ID <%= i.id_post %>
                     </a>
 
                 </p>
-                <p><%= i.body %></p>
+                <p><%= i.body_post %></p>
             </div>
         <% } %>
     </div>
