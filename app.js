@@ -148,7 +148,6 @@ app.get("/delete-posts", (req, res) => {
 
 /**
  * EJS template 1
- * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
  */
 app.get('/ejs-1', (req, res) => {
     res.status(200).render("ejs-1");
@@ -156,7 +155,6 @@ app.get('/ejs-1', (req, res) => {
 
 /**
  * EJS template 2
- * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
  */
 app.get('/ejs-2', (req, res) => {
     res.status(200).render("ejs-2", {
@@ -169,7 +167,6 @@ app.get('/ejs-2', (req, res) => {
 
 /**
  * EJS template 3
- * https://www.w3schools.com/nodejs/shownodejs_cmd.asp?filename=demo_mongodb_query
  */
 app.get('/ejs-3', (req, res) => {
     let sql = "SELECT * FROM posts_tb";
