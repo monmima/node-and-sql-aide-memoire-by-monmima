@@ -31,6 +31,8 @@ If you don't want to learn EJS from the get-go or if you don't want to be overwh
 
 Once you feel comfortable with Node.js and MySQL, then you'll be ready for EJS. EJS is a templating tool that enables you to insert data from your database into .ejs files, which are then rendered into HTML. The simplest form of EJS would be a regular old HTML page, but with an .ejs extension (but of course, that would be pointless).
 
+If you do want to learn EJS, it's pretty straightforward. A good place to start is this aide-mémoire and another is [WalkthroughCode's EJS tutorial](https://github.com/monmima/node-ejs-tutorial-by-walkthroughcode).
+
 ## Installing and running MySQL on Linux Mint
 
 **Obviously, you can use Microsoft, Linux or the Macintosh operating system** to run this project, but I'm keeping these steps below just in case I get stuck again.
