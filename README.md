@@ -29,6 +29,9 @@ For more information on SQL, here are some great resources:
 
 In case you want to have a search field that only returns complete words, you need to use what's called full text indexes. The New Boston has an [excellent tutorial on this topic](https://www.youtube.com/watch?v=d--v0NhjIfc).
 
+- To create the index, use: ALTER TABLE my_table_tb ADD FULLTEXT(table_column)
+- To search the index, use: SELECT * my_table_tb WHERE MATCH(table_column) AGAINST('%my-query%')
+
 ### Importing CSV data to phpMyAdmin
 
 1. Click on the database in the left-hand panel (***not the table, but really the database***)
