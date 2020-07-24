@@ -2,7 +2,7 @@
 
 ## Node.js + SQL
 
-This is an aide-mémoire (i. e., mnemonic device) for myself, but maybe you'll find it useful too!
+This is an aide-mémoire (i. e., reference) for myself, but maybe you'll find it useful too!
 
 ## Node.js
 
@@ -21,7 +21,22 @@ For more information on SQL, here are some great resources:
 2. Mosh Hamedami has created a [3-hour course](https://www.youtube.com/watch?v=7S_tz1z_5bA) on YouTube with an index indicating where each topic is located in it.
 3. W3School has a great [SQL tutorial](https://www.w3schools.com/sql/). I have a soft spot for the [exercices](https://www.w3schools.com/sql/sql_exercises.asp), which really helped me crystallize my understanding of SQL syntax by dint of repetition.
 
+### Database location
+
 **As you can see by looking at the project folder, I placed the SQL database at the root level, but obviously it won't run just like that.** It needs to be imported to phpmyadmin locally (or remotely, but that will require a bit more tweaking on your part).
+
+### Full text indexes
+
+In case you want to have a search field that only returns complete words, you need to use what's called full text indexes. The New Boston has an [excellent tutorial on this topic](https://www.youtube.com/watch?v=d--v0NhjIfc).
+
+### Importing CSV data to phpMyAdmin
+
+1. Click on the database in the left-hand panel (***not the table, but really the database***)
+2. Browse and select your CSV file
+3. Columns separated with: \t
+4. Columns enclosed with: (nothing at all)
+5. Columns escaped with: (nothing at all)
+6. Tick the box "The first line of the file contains the table column names"
 
 ## EJS: You don't want to learn it for now? No problem!
 
@@ -47,12 +62,3 @@ If you do want to learn EJS, it's pretty straightforward. A good place to start 
 6. create a database and then import the database content into it if needs be ***(you cannot create a database directly from a file you want to import)***
 
 Apparently, the path can be a bit different from one Linux distro to the other.
-
-### Importing CSV data to phpMyAdmin
-
-1. Click on the database in the left-hand panel (***not the table, but really the database***)
-2. Browse and select your CSV file
-3. Columns separated with: \t
-4. Columns enclosed with: (nothing at all)
-5. Columns escaped with: (nothing at all)
-6. Tick the box "The first line of the file contains the table column names"
