@@ -42,5 +42,6 @@ If you do want to learn EJS, it's pretty straightforward. A good place to start 
 3. the folder containing the .run file can be found at /opt/lampp/
 4. go to localhost/dashboard/
 5. or go to localhost/phpmyadmin
+6. create a database and then import the database content into it if needs be ***(you cannot create a database directly from a file you want to import)***
 
 Apparently, the path can be a bit different from one Linux distro to the other.
