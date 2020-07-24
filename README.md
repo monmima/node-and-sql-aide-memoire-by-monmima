@@ -33,7 +33,9 @@ Once you feel comfortable with Node.js and MySQL, then you'll be ready for EJS. 
 
 If you do want to learn EJS, it's pretty straightforward. A good place to start is this aide-mémoire and another is [WalkthroughCode's EJS tutorial](https://github.com/monmima/node-ejs-tutorial-by-walkthroughcode).
 
-## Installing and running MySQL on Linux Mint
+## Linux Mint
+
+### Installing and running MySQL on Linux Mint
 
 **Obviously, you can use Microsoft, Linux or the Macintosh operating system** to run this project, but I'm keeping these steps below just in case I get stuck again.
 
@@ -45,3 +47,12 @@ If you do want to learn EJS, it's pretty straightforward. A good place to start 
 6. create a database and then import the database content into it if needs be ***(you cannot create a database directly from a file you want to import)***
 
 Apparently, the path can be a bit different from one Linux distro to the other.
+
+### Importing CSV data to phpMyAdmin
+
+1. Click on the database in the left-hand panel (***not the table, but really the database***)
+2. Browse and select your CSV file
+3. Columns separated with: \t
+4. Columns enclosed with: (nothing at all)
+5. Columns escaped with: (nothing at all)
+6. Tick the box "The first line of the file contains the table column names"
