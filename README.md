@@ -41,6 +41,18 @@ In case you want to have a search field that only returns complete words, you ne
 5. Columns escaped with: (nothing at all)
 6. Tick the box "The first line of the file contains the table column names"
 
+If you run into a bug, try to upload a smaller sample of your database. If you still get a bug, it's likely caused by a size limit on the importation. To solve this problem, try this (**under Linux Mint**):
+
+1. Copy this file on on the desktop: /opt/lampp/etc/my.cnf
+2. Change the value of "max_allowed_packet" to "500M" (**this is unlikely to work directly in the folder, this is why the file was copied elsewhere**)
+3. Copy the file back where it was, destroying the previous version in the process
+
+Additionnally the following steps might help:
+
+4. Go the this folder: /opt/lampp/etc/php.ini
+5. Change the value of "post_max_size" to "100M"
+6. There might be one more modification to carry out in the same folder. I had to try so many things here that I can't quite remember, but I can garantee it shoudn't be so hard to find. Worst case: just copy your error message in your favorite search engine and look for something to change in the php.ini file.
+
 ## EJS: You don't want to learn it for now? No problem!
 
 There are a few pages of the site/app using EJS.
