@@ -24,7 +24,8 @@ const db = mysql.createConnection({
 // connect
 db.connect((err) => {
     if (err) {
-        throw err;
+        // throw err;
+        console.log(err);
     }
 
     console.log("MySql connected...");
@@ -50,7 +51,8 @@ app.post("/add-post-form", (req, res) => {
     let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             console.log(myRes);
             res.status(200).send("Post added...");
@@ -64,7 +66,8 @@ app.get("/add-post-1", (req, res) => {
     let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             console.log(myRes);
             res.status(200).send("Post added...");
@@ -78,7 +81,8 @@ app.get("/add-post-2", (req, res) => {
     let sql = "INSERT INTO posts_tb SET ? ";
     let query = db.query(sql, post, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             console.log(myRes);
             res.status(200).send("Post added...");
@@ -93,7 +97,8 @@ app.get("/get-posts", (req, res) => {
     let query = db.query(sql, (err, myRes) => {
         if (err) {
             res.status(200).send("Are you sure you have created a table?");
-            throw err;
+            // throw err;
+            console.log(err);
 
         } else {
             console.log(myRes);
@@ -111,7 +116,8 @@ app.get("/get-post/:id", (req, res) => {
     let sql = `SELECT * FROM posts_tb WHERE id_post = ${req.params.id}` ;
     let query = db.query(sql, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             res.status(200).json(myRes);
         }
@@ -124,7 +130,8 @@ app.get("/update-posts", (req, res) => {
     let sql = `UPDATE posts_tb SET title_post = "${newTitle}"`;
     let query = db.query(sql, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             console.log(myRes);
             res.status(200).send("All posts updated...");
@@ -137,7 +144,8 @@ app.get("/delete-posts", (req, res) => {
     let sql = `DELETE FROM posts_tb`;
     let query = db.query(sql, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             console.log(myRes);
             res.status(200).send("All posts deleted...");
@@ -173,7 +181,8 @@ app.get('/ejs-3', (req, res) => {
 
     db.query(sql, (err, myRes) => {
         if (err) {
-            throw err;
+            // throw err;
+            console.log(err);
         } else {
             console.log(myRes);
 
