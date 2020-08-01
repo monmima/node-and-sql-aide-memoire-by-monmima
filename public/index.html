@@ -30,11 +30,11 @@
 
     <!--for a more complex form, please consider the possibility of using the <legend> and <fieldset> tags-->
     <form name="form-create-data" id="form-create-data" method="POST" action="/add-post-form">
-        <p><label>Post title:</label></p>
-        <p><input type="text" name="title" required></p>
+        <p><label for="title">Post title:</label></p>
+        <p><input type="text" name="title" id="title" required></p>
         
-        <p><label>Post body:</label></p>
-        <p><input type="text" name="body" required></p>
+        <p><label for="body">Post body:</label></p>
+        <p><input type="text" name="body" id="body" required></p>
         
         <input type="submit" value="Submit">
     </form>
