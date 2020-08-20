@@ -15,7 +15,7 @@ const db = mysql.createConnection({
     user: "root",
     password: "",
 
-    // once the app is create you can uncommented the next line
+    // once the app is created you can uncommented the next line
     // (one of them if there are two lines below)
     // database: "node_and_sql_aide_memoire_db"
     database: "node_and_sql_aide_memoire_db"

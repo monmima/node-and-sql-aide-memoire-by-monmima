@@ -53,6 +53,8 @@ Additionnally the following steps might help:
 5. Change the value of "post_max_size" to "100M"
 6. There might be one more modification to carry out in the same folder. I had to try so many things here that I can't quite remember, but I can garantee it shoudn't be so hard to find. Worst case: just copy your error message in your favorite search engine and look for something to change in the php.ini file.
 
+Another possible bug is **Invalid column count in CSV input on line 1.** If you run into this bug, you need to use the **Column names:** field.
+
 ## EJS: You don't want to learn it for now? No problem!
 
 There are a few pages of the site/app using EJS.
