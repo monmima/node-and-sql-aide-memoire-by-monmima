@@ -79,3 +79,9 @@ If you do want to learn EJS, it's pretty straightforward. A good place to start 
 6. create a database and then import the database content into it if needs be ***(you cannot create a database directly from a file you want to import)***
 
 Apparently, the path can be a bit different from one Linux distro to the other.
+
+## Running the project as a whole
+
+1. To the above steps to run MySQL first
+2. Then, type "nodemon" in the console
+3. If you get a crash, it's probably because the dependencies are not install. Use "npm install" if that's the case.
